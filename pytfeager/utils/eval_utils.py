@@ -11,7 +11,7 @@ def r2(y_true, y_pred):
 def categorical_accuracy(y_true,y_pred):
     model_pred = tf.argmax(y_pred, axis=1,output_type=tf.int64)
     actual_y_true = tf.argmax(y_true, axis=1, output_type=tf.int64)
-    return tf.reduce_sum(tf.cast(tf.equal(model_pred, actual_y_true),dtype=tf.float32)) / float(y_pred.shape[0].value)
+    return tf.reduce_sum(tf.cast(tf.equal(model_pred, actual_y_true),dtype=tf.float32)) / float(y_pred.shape[0])
 
 def binary_accuracy(y_true, y_pred):
     model_pred = tf.round(tf.cast(y_pred,tf.float32))

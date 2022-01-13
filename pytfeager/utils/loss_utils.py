@@ -8,7 +8,7 @@ def mse_loss(y_pred,y_true):
 # 好像会出现nan情况
 def softmax_cross_entropy_loss(y_pred,y_true):
     y_true = tf.cast(y_true,tf.float32)
-    loss = tf.reduce_mean(-tf.reduce_sum(y_true * tf.log(y_pred), reduction_indices=[1]))
+    loss = tf.reduce_mean(-tf.reduce_sum(y_true * tf.math.log(y_pred), axis=[1]))
     return loss
 
 def sigmoid_cross_entropy_loss(y_pred,y_true):
